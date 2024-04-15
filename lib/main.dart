@@ -73,8 +73,7 @@ class _LoginPageState extends State<LoginPage> {
               // 设置圆角
               shape: MaterialStateProperty.all(const StadiumBorder(
                   side: BorderSide(style: BorderStyle.none)))),
-          child: Text('Login',
-              style: Theme.of(context).primaryTextTheme.headline5),
+          child: Text('Login'),
           onPressed: () {
             // 表单校验通过才会继续执行
             if ((_formKey.currentState as FormState).validate()) {
