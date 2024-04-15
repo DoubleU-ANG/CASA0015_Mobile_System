@@ -5,6 +5,11 @@ on:
     branches: [ main ]  # In this case when you push your code into GitHub
     # tags:
     # - "v*.*.*"          # In this case when you tag your commit with v1.0.0 for example
+  workflow_dispatch:    # 允许手动触发，并输入版本号
+    inputs:
+      version:
+        description: 'Version'
+        required: true
 
 jobs:
   build:
