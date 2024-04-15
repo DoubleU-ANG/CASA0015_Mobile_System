@@ -74,6 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   side: BorderSide(style: BorderStyle.none)))),
           child: Text(
             'Login',
+            style: TextStyle(color: Colors.black),
           ),
           onPressed: () {
             if ((_formKey.currentState as FormState).validate()) {
