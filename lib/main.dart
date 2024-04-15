@@ -72,8 +72,9 @@ class _LoginPageState extends State<LoginPage> {
           style: ButtonStyle(
               shape: MaterialStateProperty.all(const StadiumBorder(
                   side: BorderSide(style: BorderStyle.none)))),
-          child: Text('Login',
-              style: Theme.of(context).primaryTextTheme.headline5),
+          child: Text(
+            'Login',
+          ),
           onPressed: () {
             if ((_formKey.currentState as FormState).validate()) {
               (_formKey.currentState as FormState).save();
