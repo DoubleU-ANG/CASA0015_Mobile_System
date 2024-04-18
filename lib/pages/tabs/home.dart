@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mqtt_client/mqtt_client.dart';
 import 'package:mqtt_client/mqtt_server_client.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+const APIKEY = 'd59ecbd72729b83c3f424498833cf4bc';
 
 void main() {
   runApp(HomePage());
@@ -14,23 +18,59 @@ class HomePage extends StatefulWidget {
 }
 
 class _WeatherPageState extends State<HomePage> {
+  final url = Uri.parse(
+      "https://api.openweathermap.org/data/2.5/weather?lat=51.55&lon=-0.1&appid=$APIKEY");
   double temperature = 0;
   double humidity = 0;
   double rain_rate = 0;
   double rain_rate1 = 1;
   double rain_rate2 = 2;
   double rain_rate3 = 3;
-
+  double temperature1 = 0;
+  double temperature2 = 0;
+  int t1 = 0;
+  int t2 = 0;
   late List<Widget> feeds;
   String data1 = '';
   String data2 = '';
   String data3 = '';
+  var icon_url = "";
+  var weatherType = "";
+
+  void getData() async {
+    http.Response response = await http.get(url);
+    if (response.statusCode == 200) {
+      String data = response.body;
+
+      var decodeData = jsonDecode(data);
+
+      temperature1 = decodeData['main']['temp_min'];
+      temperature2 = decodeData['main']['temp_max'];
+      weatherType = decodeData["weather"][0]['main'];
+      icon_url =
+          "http://openweathermap.org/img/w/${decodeData["weather"][0]['icon']}.png";
+      setState(() {
+        t1 = temperature1.toInt() - 273;
+        t2 = temperature2.toInt() - 273;
+      });
+      String cityName = decodeData['name'];
+      print(temperature1 - 273.15);
+      print(temperature2 - 273.15);
+      print(t1);
+      print(t2);
+      print(weatherType);
+      print(cityName);
+    } else {
+      print(response.statusCode);
+    }
+  }
 
   @override
   void initState() {
     super.initState();
     feeds = [];
-    startMQTT();
+    getData();
+    // startMQTT();
   }
 
   updateList(String s) {
@@ -115,20 +155,28 @@ class _WeatherPageState extends State<HomePage> {
               Row(
                 children: [
                   Container(
-                    margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
-                    child: Image.asset(
-                      "images/a.jpeg",
+                    margin: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                    child: Image.network(icon_url),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                    child: Text(
+                      "$weatherType",
+                      style: TextStyle(
+                        fontSize: 33,
+                        color: Color.fromRGBO(100, 0, 200, 0.8),
+                      ),
                     ),
                   ),
                   Container(
-                    // margin: EdgeInsets.all(value),
-                    width: 210,
+                    margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                    width: 160,
                     alignment: Alignment.centerRight,
                     child: Text(
                       textDirection: TextDirection.ltr,
-                      "5/12℃",
+                      "$t1/$t2℃",
                       style: TextStyle(
-                        fontSize: 40,
+                        fontSize: 33,
                         color: Color.fromRGBO(100, 0, 200, 0.8),
                       ),
                     ),
@@ -137,7 +185,7 @@ class _WeatherPageState extends State<HomePage> {
               ),
 
               const SizedBox(
-                height: 30,
+                height: 33,
               ),
               Container(
                 width: double.infinity,

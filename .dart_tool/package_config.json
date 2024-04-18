@@ -86,6 +86,18 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "http",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/lints-2.1.1",
       "packageUri": "lib/",
@@ -200,7 +212,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-04-16T15:59:21.319481Z",
+  "generated": "2024-04-18T20:37:43.150333Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }
