@@ -4,7 +4,7 @@ import 'package:mqtt_client/mqtt_server_client.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const APIKEY = 'd59ecbd72729b83c3f424498833cf4bc';
+const APIKEY = 'd**********************';
 
 void main() {
   runApp(HomePage());
