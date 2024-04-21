@@ -4,7 +4,8 @@ import 'package:mqtt_client/mqtt_server_client.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const APIKEY = 'd**********************';
+const APIKEY =
+    'd**********************'; //use your own API key, which could be applied from https://openweathermap.org/
 
 void main() {
   runApp(HomePage());

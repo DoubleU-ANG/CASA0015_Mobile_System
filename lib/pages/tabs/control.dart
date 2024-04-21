@@ -168,8 +168,14 @@ class _ControlPageState extends State<ControlPage> {
                   ),
                 ),
                 Container(
-                  width: 160 - i * 2,
+                  width: 140 - i * 2,
                   height: 30,
+                  decoration: const BoxDecoration(
+                    color: Color.fromRGBO(160, 115, 205, 0.8),
+                  ),
+                ),
+                SizedBox(
+                  width: 20,
                 ),
                 ElevatedButton(
                     onPressed: () {
@@ -230,8 +236,14 @@ class _ControlPageState extends State<ControlPage> {
                   ),
                 ),
                 Container(
-                  width: 160 - j * 2,
+                  width: 140 - j * 2,
                   height: 30,
+                  decoration: const BoxDecoration(
+                    color: Color.fromRGBO(160, 115, 205, 0.8),
+                  ),
+                ),
+                SizedBox(
+                  width: 20,
                 ),
                 ElevatedButton(
                     onPressed: () {
@@ -292,8 +304,14 @@ class _ControlPageState extends State<ControlPage> {
                   ),
                 ),
                 Container(
-                  width: 160 - k * 2,
+                  width: 140 - k * 2,
                   height: 30,
+                  decoration: const BoxDecoration(
+                    color: Color.fromRGBO(160, 115, 205, 0.8),
+                  ),
+                ),
+                SizedBox(
+                  width: 20,
                 ),
                 ElevatedButton(
                     onPressed: () {
