@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:animate_do/animate_do.dart';
 import './pages/tabs.dart';
 
 void main() {
@@ -11,14 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Your Window Assistance',
+        debugShowCheckedModeBanner: false, // 不显示右上角的 debug
+        title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: "/", // route map
+        initialRoute: "/", // 注册路由表
         routes: {
-          "/": (context) => const LoginPage(title: "Login"), //
+          "/": (context) => const LoginPage(title: "登录"), // 首页路由
           "/tab": (context) => const Tabs(),
         });
   }
@@ -40,23 +41,57 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Form(
-        key: _formKey,
+        key: _formKey, // 设置globalKey，用于后面获取FormStat
         autovalidateMode: AutovalidateMode.onUserInteraction,
         child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
           children: [
-            const SizedBox(height: kToolbarHeight),
-            buildTitle(),
-            buildTitleLine(),
-            const SizedBox(height: 60),
-            buildEmailTextField(),
+            Container(
+              height: 240,
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    top: -40,
+                    height: 240,
+                    width: width,
+                    child: FadeInUp(
+                        duration: Duration(seconds: 1),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image:
+                                      AssetImage('images/2.0x/background.png'),
+                                  fit: BoxFit.fill)),
+                        )),
+                  ),
+                  Positioned(
+                    height: 240,
+                    width: width + 20,
+                    child: FadeInUp(
+                        duration: Duration(milliseconds: 1000),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'images/2.0x/background-2.png'),
+                                  fit: BoxFit.fill)),
+                        )),
+                  )
+                ],
+              ),
+            ),
+            //  const SizedBox(height: kToolbarHeight), // 距离顶部一个工具栏的高度
+            buildTitle(), // Login
+            // buildTitleLine(), // Login下面的下划线
+            const SizedBox(height: 10),
+            buildEmailTextField(), // 输入邮箱
+            const SizedBox(height: 15),
+            buildPasswordTextField(context), // 输入密码
             const SizedBox(height: 30),
-            buildPasswordTextField(context),
-            const SizedBox(height: 60),
-            buildLoginButton(context),
-            const SizedBox(height: 40),
+            buildLoginButton(context), // 登录按钮
+            const SizedBox(height: 20),
           ],
         ),
       ),
@@ -65,20 +100,23 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget buildLoginButton(BuildContext context) {
     return Align(
-      child: SizedBox(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 20),
         height: 45,
         width: 270,
         child: ElevatedButton(
           style: ButtonStyle(
+              // 设置圆角
               shape: MaterialStateProperty.all(const StadiumBorder(
                   side: BorderSide(style: BorderStyle.none)))),
           child: Text(
             'Login',
-            style: TextStyle(color: Colors.black),
           ),
           onPressed: () {
+            // 表单校验通过才会继续执行
             if ((_formKey.currentState as FormState).validate()) {
               (_formKey.currentState as FormState).save();
+              //TODO 执行登录方法
               print('email: $_email, password: $_password');
               Navigator.pushNamed(context, '/tab');
             }
@@ -89,65 +127,57 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget buildPasswordTextField(BuildContext context) {
-    return TextFormField(
-        obscureText: _isObscure,
-        onSaved: (v) => _password = v!,
-        validator: (v) {
-          if (v!.isEmpty) {
-            return 'Please enter password';
-          }
-        },
-        decoration: InputDecoration(
-            labelText: "Password",
-            suffixIcon: IconButton(
-              icon: Icon(
-                Icons.remove_red_eye,
-                color: _eyeColor,
-              ),
-              onPressed: () {
-                setState(() {
-                  _isObscure = !_isObscure;
-                  _eyeColor = (_isObscure
-                      ? Colors.grey
-                      : Theme.of(context).iconTheme.color)!;
-                });
-              },
-            )));
+    return Container(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: TextFormField(
+            obscureText: _isObscure, // 是否显示文字
+            onSaved: (v) => _password = v!,
+            validator: (v) {
+              if (v!.isEmpty) {
+                return '请输入密码';
+              }
+            },
+            decoration: InputDecoration(
+                labelText: "Password",
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    Icons.remove_red_eye,
+                    color: _eyeColor,
+                  ),
+                  onPressed: () {
+                    // 修改 state 内部变量, 且需要界面内容更新, 需要使用 setState()
+                    setState(() {
+                      _isObscure = !_isObscure;
+                      _eyeColor = (_isObscure
+                          ? Colors.grey
+                          : Theme.of(context).iconTheme.color)!;
+                    });
+                  },
+                ))));
   }
 
   Widget buildEmailTextField() {
-    return TextFormField(
-      decoration: const InputDecoration(labelText: 'Email Address'),
-      validator: (v) {
-        var emailReg = RegExp(
-            r"[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?");
-        if (!emailReg.hasMatch(v!)) {
-          return 'Please enter E-mail';
-        }
-      },
-      onSaved: (v) => _email = v!,
-    );
-  }
-
-  Widget buildTitleLine() {
-    return Padding(
-        padding: const EdgeInsets.only(left: 12.0, top: 4.0),
-        child: Align(
-          alignment: Alignment.bottomLeft,
-          child: Container(
-            color: Colors.black,
-            width: 40,
-            height: 2,
-          ),
+    return Container(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: TextFormField(
+          decoration: const InputDecoration(labelText: 'Email Address'),
+          validator: (v) {
+            var emailReg = RegExp(
+                r"[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?");
+            if (!emailReg.hasMatch(v!)) {
+              return '请输入正确的邮箱地址';
+            }
+          },
+          onSaved: (v) => _email = v!,
         ));
   }
 
   Widget buildTitle() {
     return const Padding(
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.fromLTRB(28, 0, 28, 0),
         child: Text(
-          'Login',
-          style: TextStyle(fontSize: 42, color: Colors.black),
+          'LOGIN',
+          style: TextStyle(fontSize: 40),
         ));
   }
 }

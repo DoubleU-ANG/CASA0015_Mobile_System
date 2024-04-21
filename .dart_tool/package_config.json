@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animate_do",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/animate_do-3.3.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
       "name": "async",
       "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/async-2.11.0",
       "packageUri": "lib/",
@@ -212,7 +218,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-04-21T00:42:14.870710Z",
+  "generated": "2024-04-21T14:43:53.661659Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }

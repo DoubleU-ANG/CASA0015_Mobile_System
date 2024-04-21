@@ -1,7 +1,7 @@
 name: CASA0015_Mobile_System
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.4.0
+version: 1.0.0
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   mqtt_client:
   http:
+  animate_do:
+  
 
 dev_dependencies:
   flutter_test:
@@ -22,4 +24,4 @@ flutter:
 
   assets:
     - images/a.jpeg
-    - images/2.0x/a.jpeg
+    - images/2.0x/

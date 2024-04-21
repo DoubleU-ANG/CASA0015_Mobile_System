@@ -72,7 +72,7 @@ class _SettingPageState extends State<SettingPage> {
               Divider(),
               ListTile(
                 contentPadding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                title: Text("Logout"),
+                title: Text("About"),
               ),
               Divider(),
             ],
