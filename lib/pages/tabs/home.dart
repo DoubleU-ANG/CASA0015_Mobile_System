@@ -70,7 +70,7 @@ class _WeatherPageState extends State<HomePage> {
     super.initState();
     feeds = [];
     getData();
-    // startMQTT();
+    startMQTT();
   }
 
   updateList(String s) {
