@@ -68,6 +68,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "fixnum",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/fixnum-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/dev/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -84,6 +90,72 @@
       "rootUri": "file:///C:/dev/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///C:/dev/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "geocoding",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geocoding-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "geocoding_android",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geocoding_android-3.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "geocoding_ios",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geocoding_ios-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "geocoding_platform_interface",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geocoding_platform_interface-3.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "geolocator",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator-11.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "geolocator_android",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_android-4.5.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "geolocator_apple",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_apple-2.3.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "geolocator_platform_interface",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_platform_interface-4.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "geolocator_web",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_web-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "geolocator_windows",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator_windows-0.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
     },
     {
       "name": "html",
@@ -140,6 +212,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/dev/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -150,6 +228,12 @@
       "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "sprintf",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/sprintf-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "stack_trace",
@@ -200,6 +284,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "uuid",
+      "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/uuid-4.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///C:/Users/10311/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -218,7 +308,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-04-21T15:54:18.455463Z",
+  "generated": "2024-04-22T15:38:48.467086Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }

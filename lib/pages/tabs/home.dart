@@ -3,9 +3,9 @@ import 'package:mqtt_client/mqtt_client.dart';
 import 'package:mqtt_client/mqtt_server_client.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:geolocator/geolocator.dart';
 
-const APIKEY =
-    'd**********************'; //use your own API key, which could be applied from https://openweathermap.org/
+const APIKEY = 'd59ecbd72729b83c3f424498833cf4bc'; //use your own APIkey
 
 void main() {
   runApp(HomePage());
@@ -19,14 +19,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _WeatherPageState extends State<HomePage> {
-  final url = Uri.parse(
-      "https://api.openweathermap.org/data/2.5/weather?lat=51.55&lon=-0.1&appid=$APIKEY");
+  Position? _currentlocation;
+  late bool servicePermission = false;
+  late LocationPermission permission;
+  String _currentAdress = "";
+  double latitude = 0;
+  double longitude = 0;
+
   double temperature = 0;
   double humidity = 0;
-  double rain_rate = 0;
-  double rain_rate1 = 1;
-  double rain_rate2 = 2;
-  double rain_rate3 = 3;
+  String rain_rate = '';
   double temperature1 = 0;
   double temperature2 = 0;
   int t1 = 0;
@@ -35,10 +37,15 @@ class _WeatherPageState extends State<HomePage> {
   String data1 = '';
   String data2 = '';
   String data3 = '';
+  String data4 = '';
+  String data5 = '';
   var icon_url = "";
   var weatherType = "";
+  int currentindex = 0;
 
   void getData() async {
+    final url = Uri.parse(
+        "https://api.openweathermap.org/data/2.5/weather?lat=55&lon=-0.01&appid=$APIKEY");
     http.Response response = await http.get(url);
     if (response.statusCode == 200) {
       String data = response.body;
@@ -66,17 +73,42 @@ class _WeatherPageState extends State<HomePage> {
     }
   }
 
+  Future<Position> _getCurrentLocation() async {
+    servicePermission = await Geolocator.isLocationServiceEnabled();
+    if (!servicePermission) {
+      print("Service disabled");
+    }
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+    }
+    _currentlocation = await Geolocator.getCurrentPosition();
+    print('$_currentlocation');
+    latitude = _currentlocation!.latitude;
+    longitude = _currentlocation!.longitude;
+
+    return await Geolocator.getCurrentPosition();
+  }
+
   @override
   void initState() {
     super.initState();
     feeds = [];
-    getData();
     startMQTT();
+    _getCurrentLocation();
+    getData();
   }
 
   updateList(String s) {
     setState(() {
       feeds.add(Text(s));
+      if (currentindex == 0) {
+        rain_rate = data3;
+      } else if (currentindex == 1) {
+        rain_rate = data4;
+      } else if (currentindex == 2) {
+        rain_rate = data5;
+      }
     });
   }
 
@@ -102,25 +134,33 @@ class _WeatherPageState extends State<HomePage> {
     }
     const topic1 = 'student/CASA0014/plant/ucfnaaf/temperature';
     const topic2 = 'student/CASA0014/plant/ucfnaaf/humidity';
-    const topic3 = 'student/CASA0014/plant/ucfnaaf/moisture';
+    const topic3 = 'student/CASA0014/plant/ucfnaaf/rainrate1';
+    const topic4 = 'student/CASA0014/plant/ucfnaaf/rainrate2';
+    const topic5 = 'student/CASA0014/plant/ucfnaaf/rainrate3';
     client.subscribe(topic1, MqttQos.atLeastOnce);
     client.subscribe(topic2, MqttQos.atLeastOnce);
     client.subscribe(topic3, MqttQos.atLeastOnce);
+    client.subscribe(topic4, MqttQos.atLeastOnce);
+    client.subscribe(topic5, MqttQos.atLeastOnce);
     client.updates!.listen((List<MqttReceivedMessage<MqttMessage?>>? c) {
       final receivedMessage = c![0].payload as MqttPublishMessage;
       final messageString = MqttPublishPayload.bytesToStringAsString(
           receivedMessage.payload.message);
-      print(
-          'Change notification:: topic is <${c[0].topic}>, payload is <-- $messageString -->');
+      // print(
+      //    'Change notification:: topic is <${c[0].topic}>, payload is <-- $messageString -->');
       if (c[0].topic == 'student/CASA0014/plant/ucfnaaf/temperature') {
         data1 = messageString;
-        print("temperature is ${data1}");
       } else if (c[0].topic == 'student/CASA0014/plant/ucfnaaf/humidity') {
         data2 = messageString;
-        print("humidity is ${data2}");
-      } else if (c[0].topic == 'student/CASA0014/plant/ucfnaaf/moisture') {
+      } else if (c[0].topic == 'student/CASA0014/plant/ucfnaaf/rainrate1') {
         data3 = messageString;
-        print("moisture is ${data3}");
+        print("rr1 is ${data3}");
+      } else if (c[0].topic == 'student/CASA0014/plant/ucfnaaf/rainrate2') {
+        data4 = messageString;
+        print("rr2 is ${data4}");
+      } else if (c[0].topic == 'student/CASA0014/plant/ucfnaaf/rainrate3') {
+        data5 = messageString;
+        print("rr3 is ${data5}");
       }
 
       updateList(messageString);
@@ -143,17 +183,18 @@ class _WeatherPageState extends State<HomePage> {
               // ignore: avoid_unnecessary_containers
               Container(
                   alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.fromLTRB(15, 10, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(15, 20, 0, 0),
                   child: const Text(
                     "Weather",
                     style: TextStyle(
-                        fontSize: 40, color: Color.fromRGBO(100, 0, 200, 0.8)),
+                        fontSize: 45, color: Color.fromRGBO(100, 0, 200, 0.8)),
                   )),
               const SizedBox(
                 height: 5,
               ),
 
               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     margin: const EdgeInsets.fromLTRB(25, 0, 0, 0),
@@ -170,8 +211,8 @@ class _WeatherPageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                    width: 160,
+                    margin: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    width: 120,
                     alignment: Alignment.centerRight,
                     child: Text(
                       textDirection: TextDirection.ltr,
@@ -190,11 +231,11 @@ class _WeatherPageState extends State<HomePage> {
               ),
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                padding: const EdgeInsets.fromLTRB(15, 8, 0, 0),
                 child: const Text(
                   "Room Data",
                   style: TextStyle(
-                      fontSize: 40, color: Color.fromRGBO(100, 0, 200, 0.8)),
+                      fontSize: 45, color: Color.fromRGBO(100, 0, 200, 0.8)),
                 ),
               ),
               Column(
@@ -214,7 +255,7 @@ class _WeatherPageState extends State<HomePage> {
                           onPressed: () {
                             print("bedroom");
                             setState(() {
-                              rain_rate = rain_rate1;
+                              currentindex = 0;
                             });
                           },
                           child: const Text(
@@ -227,7 +268,7 @@ class _WeatherPageState extends State<HomePage> {
                             onPressed: () {
                               print("Living Room");
                               setState(() {
-                                rain_rate = rain_rate2;
+                                currentindex = 1;
                               });
                             },
                             child: const Text(
@@ -238,7 +279,7 @@ class _WeatherPageState extends State<HomePage> {
                         ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                rain_rate = rain_rate3;
+                                currentindex = 2;
                               });
                               print("Kitchen");
                             },
@@ -250,7 +291,7 @@ class _WeatherPageState extends State<HomePage> {
                         ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                rain_rate = rain_rate3;
+                                currentindex = 2;
                               });
                               print("Dining Room");
                             },
@@ -301,7 +342,7 @@ class _WeatherPageState extends State<HomePage> {
                           color: Color.fromRGBO(100, 0, 200, 0.8),
                         ),
                         child: Text(
-                          "Rain Rate:$data3",
+                          "Rain Rate:$rain_rate",
                           style: const TextStyle(
                             fontSize: 25,
                             color: Color.fromRGBO(255, 213, 74, 1),

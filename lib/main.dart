@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
 
             buildTitle(), // Login
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
             buildEmailTextField(),
             const SizedBox(height: 15),
             buildPasswordTextField(context),
