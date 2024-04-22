@@ -31,7 +31,7 @@ This app is a home assistance for window created with Flutter, which can provide
  * Window controller
    * Open/Close window by the button shown on control page
    * Real-time window angle data visualization on the bar besides buttons
- * Customization 
+ * User customization 
 
 ## :computer:Installation
 
