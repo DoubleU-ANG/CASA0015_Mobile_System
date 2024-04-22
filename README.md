@@ -8,16 +8,16 @@ This app is a home assistance for window created with Flutter, which can provide
 
 Login Page:
 ![Weixin Image_20240422201247](https://github.com/DoubleU-ANG/CASA0015_Mobile_System/assets/100694831/1436bdd7-1ba8-40cf-a691-55288fb8db0e)
-
+<img src="screens/Login.jpg" height="500em" />
 Home Page (Weather and home status visulization):
 ![Weixin Image_20240422201256](https://github.com/DoubleU-ANG/CASA0015_Mobile_System/assets/100694831/b9d694e6-5f6e-4dcf-a8e5-9280a6ad5944)
-
+<img src="screens/Home.jpg" height="500em" />
 Control Page (Control the windows here!)
 ![Weixin Image_20240422201305](https://github.com/DoubleU-ANG/CASA0015_Mobile_System/assets/100694831/03fdeebc-8946-40ae-985c-fff609f2d488)
-
+<img src="screens/Control.jpg" height="500em" />
 Account Page:
 ![Weixin Image_20240422201313](https://github.com/DoubleU-ANG/CASA0015_Mobile_System/assets/100694831/ead928e9-1a6c-4bfe-ae0d-6ede4e6a4f3f)
-
+<img src="screens/Account.jpg" height="500em" />
 
 ## Features: 
 
