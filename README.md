@@ -33,6 +33,9 @@ This app is a home assistance for window created with Flutter, which can provide
    * Real-time window angle data visualization on the bar besides buttons
  * User customization 
 
+## :woman:User experience
+
+
 ## :computer:Installation
 
 Download the whole project folder and unzip it. Open it with your flutter in VScode.
