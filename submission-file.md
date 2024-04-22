@@ -1,27 +1,12 @@
-<!---
-
----
 title: "CASA0015: Mobile System Final Assessment"
 author: "ZHENKUN WANG(HARRY)"
 date: "22 Apr 2024"
----
 
--->
-
-# Submission Guide
-
-You will need to edit this file, create a PDF using the instructions below, from this file.   Sign it digitally and upload to Moodle
-
-## How to create a PDF from Markdown
-When finished you should export to PDF using VSCode and MarkdownPDF Extension. Make sure you select no headers and no footers in the
-extension preferences before exporting to PDF.   
-
-Upload this PDF into Moodle for submission including a copy of your presentation slides.
 
 ## Link to GitHub Repository
 
-Flutter Application Name - Window assistance
-GitHub Repository - [https://github.com/ucl-casa-ce/casa0015-mobile-assessment](https://github.com/ucl-casa-ce/casa0015-mobile-assessment)
+Flutter Application Name - Home Assistance for Windows
+GitHub Repository - [https://github.com/DoubleU-ANG/CASA0015_Mobile_System](https://github.com/DoubleU-ANG/CASA0015_Mobile_System)
 
 ## Introduction to Application
 
