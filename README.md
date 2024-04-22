@@ -6,16 +6,20 @@ This app is a home assistance for window created with Flutter, which can provide
 
 ## :iphone:Screenshot:
 
-Login Page:closed_lock_with_key::
+:closed_lock_with_key:Login Page:
+
 <img src="screens/Login.jpg" height="500em" />
 
-Home Page (Weather and home status visulization):cloud::
+:cloud:Home Page (Weather and home status visulization):
+
 <img src="screens/Home.jpg" height="500em" />
 
-Control Page (Control the windows here!):wrench::
+:wrench:Control Page (Control the windows here!):
+
 <img src="screens/Control.jpg" height="500em" />
 
-Account Page:man::
+:man:Account Page:
+
 <img src="screens/Account.jpg" height="500em" />
 
 ## :sparkler:Features: 
