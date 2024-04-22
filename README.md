@@ -1,6 +1,6 @@
 # :house:Home Assistance For Windows in house
 
-This app is a home assistance for window created with Flutter, which can provide weather information for you and monitor humidity,temperature of each room in the house and, most importantly, the rainrate near the window of each room in order to protect your house from the damage of rain even when there are not at home. :umbrella:
+This app is a home assistance for window created with Flutter, which can provide weather status and monitor humidity,temperature of each room in the house and, most importantly, the rainrate near the window of each room in order to protect user's house from the damage of rain even when there are not people at home. :umbrella:
 
 #### It is not completed yet, more features are expected to be added. 
 
