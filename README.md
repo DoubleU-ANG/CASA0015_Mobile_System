@@ -34,6 +34,12 @@ This app is a home assistance for window created with Flutter, which can provide
  * User customization 
 
 ## :woman:User experience
+<img src="storyboard/P1.wepb" height="500em" />
+<img src="storyboard/P2.wepb" height="500em" />
+<img src="storyboard/P3.wepb" height="500em" />
+<img src="storyboard/P4.wepb" height="500em" />
+<img src="storyboard/P5.wepb" height="500em" />
+<img src="storyboard/P6.wepb" height="500em" />
 
 
 ## :computer:Installation
