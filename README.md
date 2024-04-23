@@ -2,7 +2,7 @@
 
 This app is a home assistance for window created with Flutter, which can provide weather status and monitor humidity,temperature of each room in the house and, most importantly, the rainrate near the window of each room in order to protect user's house from the damage of rain even when there are not people at home. :umbrella:
 
-Demonstration Video:https://youtu.be/UsszsUELij0
+Demonstration Video:video_camera::https://youtu.be/UsszsUELij0
 
 #### It is not completed yet, more features are expected to be added. 
 
@@ -68,6 +68,13 @@ Download the whole project folder and unzip it. Open it with your flutter in VSc
   * Input random email and password can pass through the login page
   * Change the MQTT broker to your own one and subscribe to your own topics
   * Use your own API key to get weather service, which can be easily and free to apply at https://openweathermap.org/
+
+## :mag_right:Future development
+* Complete all the service in Account Page
+* Introduce a rainmap to provide more rain information
+* Introduce notification for user when needed
+* Optimize layout of all the page
+
 
 ## :mailbox:Contact Details
 
