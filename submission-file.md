@@ -10,7 +10,8 @@ date: "22 Apr 2024"
 
 ## Link to GitHub Repository
 
-Flutter Application Name - Home Assistance for Windows
+Flutter Application Name - Home Window Assistance
+
 GitHub Repository - [https://github.com/DoubleU-ANG/CASA0015_Mobile_System](https://github.com/DoubleU-ANG/CASA0015_Mobile_System)
 
 ## Introduction to Application
