@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:geolocator/geolocator.dart';
 
-const APIKEY = 'd59ecbd72729b83c3f424498833cf4bc'; //use your own APIkey
+const APIKEY = '*******************'; //use your own APIkey
 
 void main() {
   runApp(HomePage());
@@ -113,12 +113,12 @@ class _WeatherPageState extends State<HomePage> {
   }
 
   Future<void> startMQTT() async {
-    final client = MqttServerClient('mqtt.cetools.org', '');
+    final client = MqttServerClient('mqtt.*******.org', '');//use your own mqtt server here
     client.port = 1884;
     client.setProtocolV311();
     client.keepAlivePeriod = 30;
-    final String username = 'student';
-    final String password = 'ce2021-mqtt-forget-whale';
+    final String username = '*******';//use your own username and password here
+    final String password = '*******';
     try {
       await client.connect(username, password);
     } catch (e) {
