@@ -23,11 +23,16 @@ for citation - [https://www.scribbr.co.uk/referencing/harvard-website-reference/
 
 ## Biblography
 
-1. Last name, First initial. (Year published). Title. Edition. (Only include the edition if it is not the first edition) City published: Publisher, Page(s). <http://google.com>
+1. Mohammad. 2020. Flutter-Login-Page-Design. [online] Available at <https://github.com/afgprogrammer/Flutter-Login-Page-Design> [Assessed 11 April 2024]
 
-2. Last name, First initial. (Year published). Title. Edition. (Only include the edition if it is not the first edition) City published: Publisher, Page(s).  <http://google.com>
+2. Dart packages. 2022. mqtt_client | Dart Package. [online] Available at: <https://pub.dev/packages/mqtt_client> [Accessed 13 April 2024].
 
-----
+3. Dart packages. 2022. http_api | Dart Package. [online] Available at: <https://pub.dev/packages/http_api> [Accessed 15 April 2024].
+
+4. Dart packages. 2022. geolocator | Dart Package. [online] Available at: <https://pub.dev/packages/http_api> [Accessed 15 April 2024].
+
+5. Openweathermap. 2024. Current weather data | Openweathermap API.[online] Available at: <https://openweathermap.org/current> [Accessed 15 April 2024].
+
 
 ## Declaration of Authorship
 
