@@ -36,27 +36,27 @@ This app is a home assistance for window created with Flutter, which can provide
  * User customization 
 
 ## :woman:User experience
-A woman opening a window in her house and seeing the bright, sunny weather outside. She smiles and says, 'What a beautiful day!'
+A woman opened a window in her house and seeing the bright, sunny weather outside. She smiled and said, 'What a beautiful day!'
 
 <img src="storyboard/P1.jpg" height="300em" />
 
-She leaving her house to buy groceries. She step out of her front door, holding a shopping bag. 
+She left her house to buy groceries. She step out of her front door, holding a shopping bag. 
 
 <img src="storyboard/P2.jpg" height="300em" />
 
-However, a sudden change in weather happens and dark clouds cover the sky.
+However, a sudden change in weather happened and dark clouds covered the sky.
 
 <img src="storyboard/P3.jpg" height="300em" />
 
-And then, she open the 'Home Window Assistance' app in her phone, and check the room data and try to close the windows.
+And then, she opened the 'Home Window Assistance' app in her phone, and checked the room data and tried to close the windows.
 
 <img src="storyboard/P4.jpg" height="300em" />
 
-After that, the windows in her house automatically close without anyone at home.
+After that, the windows in her house automatically closed without anyone at home.
 
 <img src="storyboard/P5.jpg" height="300em" />
 
-Finally, with the help of this app, she is able to continue her shopping rather than turning back to close the windows in her house.
+Finally, with the help of this app, she was able to continue her shopping rather than turning back to close the windows in her house.
 
 <img src="storyboard/P6.jpg" height="300em" />
 
