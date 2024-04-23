@@ -76,6 +76,11 @@ Download the whole project folder and unzip it. Open it with your flutter in VSc
 * Optimize layout of all the page
 
 ## :page_with_curl:Reference:
+* Mohammad. 2020. Flutter-Login-Page-Design. [online] Available at https://github.com/afgprogrammer/Flutter-Login-Page-Design [Assessed 11 April 2024]
+* Dart packages. 2024. mqtt_client | Dart Package. [online] Available at: https://pub.dev/packages/mqtt_client [Accessed 13 April 2024].
+* Dart packages. 2024. http_api | Dart Package. [online] Available at: https://pub.dev/packages/http_api [Accessed 15 April 2024].
+* Dart packages. 2024. geolocator | Dart Package. [online] Available at: https://pub.dev/packages/http_api [Accessed 15 April 2024].
+* Openweathermap. 2024. Current weather data | Openweathermap API.[online] Available at: https://openweathermap.org/current [Accessed 15 April 2024].
 
 ## :mailbox:Contact Details
 
