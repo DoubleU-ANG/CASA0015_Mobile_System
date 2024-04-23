@@ -48,7 +48,7 @@ However, a sudden change in weather happens with dark clouds covering the sky.
 
 <img src="storyboard/P3.jpg" height="300em" />
 
-And then, she open the 'Home Window Assistance' app in her phone, and try to close the windows.
+And then, she open the 'Home Window Assistance' app in her phone, and check the room data and try to close the windows.
 
 <img src="storyboard/P4.jpg" height="300em" />
 
