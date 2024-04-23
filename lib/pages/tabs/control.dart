@@ -27,7 +27,7 @@ class _ControlPageState extends State<ControlPage> {
   static const topic7 = 'student/CASA0014/plant/ucfnaaf/servo2';
   static const topic8 = 'student/CASA0014/plant/ucfnaaf/servo3';
   final builder = MqttClientPayloadBuilder();
-  final client = MqttServerClient('mqtt.cetools.org', '');
+  final client = MqttServerClient('mqtt.****.org', '');//use your own mqtt server here
 
   @override
   void initState() {
@@ -46,8 +46,8 @@ class _ControlPageState extends State<ControlPage> {
     client.port = 1884;
     client.setProtocolV311();
     client.keepAlivePeriod = 30;
-    final String username = 'student';
-    final String password = 'ce2021-mqtt-forget-whale';
+    final String username = '****';                //use your own user name and password here
+    final String password = '****';
     try {
       await client.connect(username, password);
     } catch (e) {
