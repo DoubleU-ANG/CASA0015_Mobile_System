@@ -64,7 +64,8 @@ Finally, with the help of this app, she is able to continue her shopping rather 
 ## :computer:Installation
 
 Download the whole project folder and unzip it. Open it with your flutter in VScode.
-* :key:Two key things need to be noticed:
+* :key:Three key things need to be noticed:
+  * Input random email and password can pass through the login page
   * Change the MQTT broker to your own one and subscribe to your own topics
   * Use your own API key to get weather service, which can be easily and free to apply at https://openweathermap.org/
 
