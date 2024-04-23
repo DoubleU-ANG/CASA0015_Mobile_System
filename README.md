@@ -44,7 +44,7 @@ She leaving her house to buy groceries. She step out of her front door, holding 
 
 <img src="storyboard/P2.jpg" height="300em" />
 
-However, a sudden change in weather happens with dark clouds covering the sky.
+However, a sudden change in weather happens and dark clouds cover the sky.
 
 <img src="storyboard/P3.jpg" height="300em" />
 
